@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto</title>
+    <style>
+      body {
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+  background-image: url("https://caelum-online-public.s3.amazonaws.com/assets-imersaodev/background-aluraflix.png");
+  background-color: #000000;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.page-title {
+  color: #ffffff;
+  margin: 0 0 5px;
+}
+
+.page-subtitle {
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.page-logo {
+  width: 200px;
+}
+
+.alura-logo {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+body > img {
+  margin: 0px 10px;
+}
+img {
+  max-height: 350px;
+}
+p{
+  margin: auto;
+  padding-bottom: 20px;
+  color: white;
+  width: min-content;
+  display: inline-block
+}
+p > img{
+  margin: 0px 10px;
+  width: 250px;
+}
+    </style>
+</head>
+
+<body>
+  <div class="container">
+      <h1 class="page-title">
+          Projeto de Filmes
+      </h1>
+      <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo"
+          alt="">
+  </div>
+  <a href="https://alura.com.br/" target="_blank">
+      <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+  </a>
+
+<script>
+  var listaFilmes = ['https://upload.wikimedia.org/wikipedia/pt/3/3a/Interstellar_Filme.png','https://i5.walmartimages.com/asr/a977fb15-02bf-450b-bfc5-682cb4932548.86c3fbf41473395413624ba16670c537.jpeg','https://www.sonypictures.com.br/sites/brazil/files/2023-06/1400x2100.jpg','https://br.web.img3.acsta.net/medias/nmedia/18/90/67/58/20107766.jpg','https://media.comicbook.com/2021/02/invincible-key-art-rgb-1256530.jp312eg'];
+
+var nomeFilmes = ['Interstellar', 'Rick and Morty', 'Homem-Aranha', 'Harry Potter e Ordem da Fênix','Invencível']
+
+var extensoesPermitidas = ['.jpg', '.jpeg','.png'];
+
+for (let i = 0; i < listaFilmes.length; i++) {
+    var url = listaFilmes[i].toLowerCase(); // Convertendo a URL para minúsculas para tornar a verificação de extensão sem distinção de maiúsculas e minúsculas
+  
+    if (extensoesPermitidas.some(extensao => url.endsWith(extensao))){
+      document.write(`<p><img src="${listaFilmes[i]}">${nomeFilmes[i]}</p>`);
+    } else {
+      alert(`URL inválida para a imagem: ${nomeFilmes[i]}`);
+    }
+}
+</script>  
+</body>
+
+</html>
