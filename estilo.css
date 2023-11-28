@@ -69,3 +69,17 @@ body {
   #mensagemDeErro {
     color: #ff0000;
   }
+  header {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    padding: 10px;
+}
+
+.header-title {
+    margin-right: 10px; /* Margem à direita para separar o título da imagem */
+}
+
+.header-logo {
+    max-width: 100px; /* Ajuste a largura máxima conforme necessário */
+    height: auto;
+}
