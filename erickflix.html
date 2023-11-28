@@ -2,85 +2,14 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vamos ver se foi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vamos ver se foi</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
 
-    <style>
-        body {
-  font-family: "Roboto Mono", monospace;
-  text-align: center;
-  background-image: url("https://caelum-online-public.s3.amazonaws.com/assets-imersaodev/background-aluraflix.png");
-  background-color: #000000;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-}
+  
 
-.container {
-  text-align: center;
-  padding: 20px;
-}
-
-.page-title {
-  color: #ffffff;
-  margin: 0 0 5px;
-}
-
-.page-subtitle {
-  color: #ffffff;
-  margin-top: 5px;
-}
-
-.page-logo {
-  width: 200px;
-}
-
-.alura-logo {
-  width: 40px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-#listaFilmes img {
-  margin: 10px;
-  max-height: 250px;
-}
-
-.form-wrapper {
-  margin: 0 0 15px;
-}
-
-.form-wrapper input {
-  display: block;
-  margin: 0 auto;
-  padding: 10px 15px;
-}
-
-.form-wrapper button {
-  border: 0;
-  color: #ffffff;
-  background: #da1e26;
-  font-weight: bold;
-  padding: 15px 20px;
-  font-size: 16px;
-  border-radius: 4px;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.form-wrapper button:hover {
-  opacity: 0.8;
-}
-
-#mensagemDeErro {
-  color: #ff0000;
-}
-
-    </style>
-    
     <body>
         <div class="container">
           <h1 class="page-title">
@@ -92,6 +21,7 @@
           </p>
           <div class="form-wrapper">
             <input type="text" id="filme" name="filme" placeholder="Insira endereço de imagem">
+            <input type="text" id="trailer" name="filme" placeholder="Insira endereço do trailer">
             <p type="text" id="mensagemDeErro"></p>
       
             <button onClick="adicionarFilme()">Adicionar Filme</button>
@@ -102,47 +32,7 @@
           <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
         </a>
 
-        <script>
-            var listaDeFilmes = [];
-var linksDoYoutube = ['https://www.youtube.com/watch?v=mbbPSq63yuM&t=2s','https://www.youtube.com/watch?v=SS6ABPkfmBE']
-var extensoesPermitidas = ["jpg", "jpeg", "png"];
-
-function adicionarFilme() {
-  var filmeFavorito = document.getElementById("filme").value;
-  var elementoListaFilmes = document.getElementById("listaFilmes");
-
-  if (extensoesPermitidas.some(extensao => filmeFavorito.toLowerCase().endsWith(extensao))) {
-    listaDeFilmes.push(filmeFavorito);
-    console.log("Lista de Filmes:", listaDeFilmes);
-
-    carregarFilmes();
-  } else {
-    exibirMensagemDeErro();
-  }
-
-  function carregarFilmes() {
-    if (listaDeFilmes.length <= linksDoYoutube.length) {
-      var link = document.createElement("a");
-      link.href = linksDoYoutube[listaDeFilmes.length - 1]; // O índice é um a menos do que o comprimento do array
-      link.target = "_blank";
-
-      var imagem = document.createElement("img");
-      imagem.src = filmeFavorito;
-
-      // Adicionar a imagem ao link
-      link.appendChild(imagem);
-
-      // Adicionar o link com a imagem ao elementoListaFilmes
-      elementoListaFilmes.appendChild(link);
-    
-    document.getElementById("filme").value = "";
-  }
-   function exibirMensagemDeErro() {
-    document.getElementById("mensagemDeErro").innerHTML = "Endereço de Imagem inválido, tente novamente";
-   }
-}
-}
-        </script>
+        <script src="script.js"> </script>
 
       </body>
 </html>
