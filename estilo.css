@@ -1,7 +1,7 @@
 body {
     font-family: "Roboto Mono", monospace;
     text-align: center;
-    background-image: url("https://caelum-online-public.s3.amazonaws.com/assets-imersaodev/background-aluraflix.png");
+    background: url("C:\\Users\\55397362816\\GIT HUB\\cine-imagens\\background\\azul.gif");
     background-color: #000000;
     background-size: cover;
     background-position: center top;
@@ -20,18 +20,21 @@ body {
   
   .page-subtitle {
     color: #ffffff;
-    margin-top: 5px;
+    margin-top: -125px;
   }
   
   .page-logo {
-    width: 200px;
+    width: 300px;
+    height: auto;
+    margin-top: -100px;
   }
   
-  .alura-logo {
-    width: 40px;
+  .erick-logo {
+    width: 230px;
+    height: auto;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: -50px;
+    right: -50px;
   }
   
   #listaFilmes img {
@@ -69,17 +72,3 @@ body {
   #mensagemDeErro {
     color: #ff0000;
   }
-  header {
-    display: flex;
-    align-items: center; /* Alinha os itens verticalmente ao centro */
-    padding: 10px;
-}
-
-.header-title {
-    margin-right: 10px; /* Margem à direita para separar o título da imagem */
-}
-
-.header-logo {
-    max-width: 100px; /* Ajuste a largura máxima conforme necessário */
-    height: auto;
-}
