@@ -3,13 +3,28 @@ var listaDeFilmes = [];
 var linksDoYoutube = ['https://www.youtube.com/watch?v=mbbPSq63yuM&t=2s', 'https://www.youtube.com/watch?v=SS6ABPkfmBE']
 var extensoesPermitidas = ["jpg", "jpeg", "png"];
 
+
+// ----- Função auxiliar para limpar o valor de um elemento ----
+function limparValor(id){
+    document.getElementById(id).value = '';
+}
+
 // Função para adicionar um filme à lista
 function adicionarFilme() {
     // Obtenção dos valores dos campos de entrada no HTML
     var filmeFavorito = document.getElementById("filme").value;
+    var nomeDoFilme = document.getElementById("nomeDoFilme").value;
     var elementoListaFilmes = document.getElementById("listaFilmes");
     var trailerFilme = document.getElementById("trailer").value;
+    
 
+    if (!filmeFavorito || !nomeDoFilme || !trailerFilme) {
+        limparValor('filme');
+        limparValor('nomeDoFilme');
+        limparValor('trailer');
+        exibirMensagemDeErro("Todos os campos devem ser preenchidos");
+        return;
+    }
     // Verificação se a extensão do filme é permitida
     if (extensoesPermitidas.some(extensao => filmeFavorito.toLowerCase().endsWith(extensao))) {
         // Adição do filme à lista de filmes
@@ -20,7 +35,7 @@ function adicionarFilme() {
         carregarFilmes();
     } else {
         // Exibição de mensagem de erro se a extensão não for permitida
-        exibirMensagemDeErro();
+        exibirMensagemDeErro("Endereço de Imagem inválido, tente novamente");
     }
 
     // Função para carregar os filmes na interface
@@ -33,15 +48,17 @@ function adicionarFilme() {
             <a href="${novoFilme.trailer}" target="_blank">
                 <img src="${novoFilme.imagem}" alt="Imagem do Filme">
             </a>
+            <p> ${nomeDoFilme}
         </div>`;
 
         // Limpa os campos de entrada no HTML após adicionar o filme
-        document.getElementById('trailer').value = '';
-        document.getElementById('filme').value = '';
+        limparValor('filme');
+        limparValor('nomeDoFilme');
+        limparValor('trailer');
     }
 
     // Função para exibir mensagem de erro
-    function exibirMensagemDeErro() {
-        document.getElementById("mensagemDeErro").innerHTML = "Endereço de Imagem inválido, tente novamente";
+    function exibirMensagemDeErro(mensagem) {
+        document.getElementById("mensagemDeErro").innerHTML = mensagem;
     }
 }
