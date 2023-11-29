@@ -1,74 +1,92 @@
 body {
-    font-family: "Roboto Mono", monospace;
-    text-align: center;
-    background: url("C:\\Users\\55397362816\\GIT HUB\\cine-imagens\\background\\azul.gif");
-    background-color: #000000;
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+  background: url("C:\\Users\\55397362816\\GIT HUB\\cine-imagens\\background\\azul.gif");
+  background-size: 110%;
+  background-position: center top;
+  margin: 100px;
+  background-repeat: no-repeat;
+  animation: teste;
+  animation-duration: 1.5s;
+}
+
+@keyframes teste{
+  from{
+    opacity: 0;
   }
-  
-  .container {
-    text-align: center;
-    padding: 20px;
+  to{
+    opacity: 1;
   }
-  
-  .page-title {
-    color: #ffffff;
-    margin: 0 0 5px;
-  }
-  
-  .page-subtitle {
-    color: #ffffff;
-    margin-top: -125px;
-  }
-  
-  .page-logo {
-    width: 300px;
-    height: auto;
-    margin-top: -100px;
-  }
-  
-  .erick-logo {
-    width: 230px;
-    height: auto;
-    position: absolute;
-    top: -50px;
-    right: -50px;
-  }
-  
-  #listaFilmes img {
-    margin: 10px;
-    max-height: 250px;
-  }
-  
-  .form-wrapper {
-    margin: 0 0 15px;
-  }
-  
-  .form-wrapper input {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 15px;
-  }
-  
-  .form-wrapper button {
-    border: 0;
-    color: #ffffff;
-    background: #da1e26;
-    font-weight: bold;
-    padding: 15px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .form-wrapper button:hover {
-    opacity: 0.8;
-  }
-  
-  #mensagemDeErro {
-    color: #ff0000;
-  }
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.page-title {
+  color: #ffffff;
+  margin: 0 0 5px;
+}
+
+.page-subtitle {
+  color: #ffffff;
+  margin-top: -125px;
+}
+
+.page-logo {
+  width: 300px;
+  height: auto;
+  margin-top: -100px;
+}
+
+.erick-logo {
+  width: 230px;
+  height: auto;
+  position: absolute;
+  top: -50px;
+  right: -50px;
+}
+
+#listaFilmes img {
+  margin: 10px;
+  max-height: 350px;
+  border-radius: 4px;
+}
+
+.form-wrapper {
+  margin: 0 0 15px;
+}
+
+.form-wrapper input {
+  display: linear;
+  margin: 0 auto;
+  padding: 10px 15px;
+  background-color: #f7f7ff;
+  border-radius: 4px;
+}
+
+.form-wrapper .nomeFilme {
+ margin: 10px;
+}
+
+.form-wrapper button {
+  border: 0;
+  color: #ffffff;
+  background: #da1e26;
+  font-weight: bold;
+  padding: 15px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-wrapper button:hover {
+  opacity: 0.8;
+}
+
+#mensagemDeErro {
+  color: #ff0000;
+}
